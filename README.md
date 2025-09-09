@@ -1,2 +1,2 @@
 # personal-website
-This is my page, showing my profile, bakcground, skills and projects.
+This is my page, showing my profile, background, skills and projects.
