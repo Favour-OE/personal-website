@@ -1,14 +1,28 @@
-h1 {
-    color: black;
-    }
-button:hover {
-    background-color: red;
-    cursor: pointer;
-    font-size: 20px;
+:root{
+    --titleSectionPrimaryColor: #a64540;
+    --titleSectionSecondaryColor: #16171c;
+    --titleSectionTertiaryColor: #fafafb;
 }
+
 #title {
+    color: var(--titleSectionPrimaryColor);
     text-align: center;
     padding-top: 200px;
     background-image: url(../images/background.jpg);
     background-position: center top;
+}
+
+.title-section-botton{
+    color: var(--titleSectionPrimaryColor);
+    border: solid var(--titleSectionPrimaryColor) 1px;
+    border-radius: 5px;
+    padding: 15px 20px;
+    background-color: transparent;
+
+}
+
+.title-section-botton:hover {
+    background-color: var(--titleSectionPrimaryColor);
+    color: var(--titleSectionTertiaryColor);
+    cursor: pointer;
 }
