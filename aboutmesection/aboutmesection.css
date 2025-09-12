@@ -1,0 +1,11 @@
+#aboutme{
+    text-align: center;
+}
+
+#aboutme h1{
+    color:var(--titleSectionPrimaryColor)
+}
+
+.aboutme-section-description{
+    text-align: justify;
+}

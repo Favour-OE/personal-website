@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<link rel="stylesheet" href="./titlesection/titlesection.css" />
+		<link rel="stylesheet" href="./aboutmesection/aboutmesection.css" />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Merriweather"
 			rel="stylesheet"
@@ -10,8 +11,35 @@
 	<body>
 		<div class="main-section" id="title">
 			<h1 class="title-section-header">FAVOUR EMMANUEL</h1>
-			<p class="title-section-subtitle">Data to Decisions, Cloth to Style, Visions to Reality</p>
-			<button class="title-section-botton" onclick="makeDreamComeTrue()">TAKE A DEEP DIVE</button>
+			<p class="title-section-subtitle">
+				Data to Decisions, Cloth to Style, Visions to Reality
+			</p>
+			<button class="title-section-botton" onclick="makeDreamComeTrue()">
+				TAKE A DEEP DIVE
+			</button>
+		</div>
+		<div class="misc-section" id="aboutme">
+			<div class="text-block-container">
+				<h1>ABOUT ME</h1>
+				<p class="aboutme-section-description">
+					I am a Statistician by training, a skilled Tailor by craft,
+					a Musician by passion, and a Project Manager by profession.
+					Throughout my journey, I have discovered that numbers reveal
+					patterns, fabrics tell stories, music carries emotion, and
+					well-managed projects turn ideas into impact. This unique
+					blend has shaped how I approach life and work: with
+					precision, creativity, harmony, and structure. Whether I am
+					analyzing data to guide decisions, designing garments that
+					inspire confidence, creating melodies that uplift, or
+					managing projects to successful execution, my focus remains
+					the same — bringing clarity, style, and joy into the lives
+					of others. With the right balance of skill, purpose, and
+					faith, I believe we all have the capacity to transform our
+					gifts into tools that serve people and shape the future.
+					Stay tuned to see the projects I create, the styles I
+					design, and the melodies I share below!
+				</p>
+			</div>
 		</div>
 	</body>
 </html>
@@ -20,6 +48,7 @@
 	* {
 		box-sizing: border-box;
 		font-family: Merriweather;
+		/*overflow-x: hidden;*/
 	}
 	html,
 	body {
@@ -32,6 +61,14 @@
 		height: 100vh;
 		padding: 25px;
 		background-size: cover;
+	}
+	.misc-section {
+		width: 100vw;
+		padding: 100px 25px;
+	}
+	.text-block-container {
+		width: 65%;
+		margin: 0 auto;
 	}
 </style>
 
