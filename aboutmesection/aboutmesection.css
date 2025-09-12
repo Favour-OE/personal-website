@@ -1,11 +1,38 @@
-#aboutme{
-    text-align: center;
+#aboutme {
+	text-align: center;
+	background-color: var(--titleSectionTertiaryColor);
 }
 
-#aboutme h1{
-    color:var(--titleSectionPrimaryColor)
+#aboutme h1 {
+	color: var(--titleSectionPrimaryColor);
 }
 
-.aboutme-section-description{
-    text-align: justify;
+.aboutme-section-description {
+	text-align: justify;
+	margin-top: 40px;
+}
+
+.aboutme-icons {
+	font-size: 25px;
+	margin-top: 45px;
+	margin-bottom: 25px;
+}
+
+.aboutme-icon {
+	margin: 10px;
+	color: var(--titleSectionPrimaryColor);
+}
+
+.aboutme-icons > a {
+	text-decoration: none;
+}
+
+.aboutme-icon:hover {
+	cursor: pointer;
+    background-color: var(--titleSectionPrimaryColor);
+	color: var(--titleSectionTertiaryColor);   
+}
+
+.aboutme-download-link > a {
+	color: var(--titleSectionSecondaryColor);
 }
