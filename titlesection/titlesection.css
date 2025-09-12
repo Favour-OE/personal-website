@@ -1,5 +1,5 @@
 h1 {
-    color: blue;
+    color: black;
     }
 button:hover {
     background-color: red;
@@ -9,4 +9,6 @@ button:hover {
 #title {
     text-align: center;
     padding-top: 200px;
+    background-image: url(../images/background.jpg);
+    background-position: center top;
 }
