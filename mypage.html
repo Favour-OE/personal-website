@@ -26,18 +26,12 @@
 					a Musician by passion, and a Project Manager by profession.
 					Throughout my journey, I have discovered that numbers reveal
 					patterns, fabrics tell stories, music carries emotion, and
-					well-managed projects turn ideas into impact. This unique
-					blend has shaped how I approach life and work: with
-					precision, creativity, harmony, and structure. Whether I am
-					analyzing data to guide decisions, designing garments that
-					inspire confidence, creating melodies that uplift, or
-					managing projects to successful execution, my focus remains
-					the same — bringing clarity, style, and joy into the lives
-					of others. With the right balance of skill, purpose, and
-					faith, I believe we all have the capacity to transform our
-					gifts into tools that serve people and shape the future.
-					Stay tuned to see the projects I create, the styles I
-					design, and the melodies I share below!
+					well-managed projects turn ideas into impact. With the
+					right balance of skill, purpose, and faith, I believe we all
+					have the capacity to transform our gifts into tools that
+					serve people and shape the future. Stay tuned to see the
+					projects I create, the styles I design, and the melodies I
+					share below!
 				</p>
 			</div>
 		</div>
@@ -48,7 +42,6 @@
 	* {
 		box-sizing: border-box;
 		font-family: Merriweather;
-		/*overflow-x: hidden;*/
 	}
 	html,
 	body {
@@ -57,19 +50,25 @@
 	}
 
 	.main-section {
-		width: 100vw;
+		width: 100%;
 		height: 100vh;
 		padding: 25px;
 		background-size: cover;
 	}
 	.misc-section {
-		width: 100vw;
+		width: 100%;
 		padding: 100px 25px;
 	}
 	.text-block-container {
 		width: 65%;
 		margin: 0 auto;
 	}
+
+	@media screen and (max-width: 500px) {
+     .text-block-container {
+        width: 100%;
+    }
+}
 </style>
 
 <script>
