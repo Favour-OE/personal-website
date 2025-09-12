@@ -25,4 +25,5 @@
     background-color: var(--titleSectionPrimaryColor);
     color: var(--titleSectionTertiaryColor);
     cursor: pointer;
+    transition-delay: 200ms;
 }
