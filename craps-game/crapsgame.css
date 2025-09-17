@@ -6,7 +6,7 @@
 
 .craps-game-title{
     text-align: center;
-    margin-top: 100px;
+    
 }
 
 .craps-game-container{
@@ -38,7 +38,7 @@
 }
 
 .craps-registration-continue{
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 .craps-registration-continue:hover{
