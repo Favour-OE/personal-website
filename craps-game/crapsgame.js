@@ -1,13 +1,23 @@
+//Craps Main Data
+let crapsUsername = "";
+
+//Craps Game Settings
+const startingMoney = 1000;
+const startingRound = 0;
+
 //HTML Elements ID
 const crapsUsernameInput = "craps-username-input";
-const crapsRegistrationPane = "craps-registration-game";
+const crapsRegistrationPane = "craps-registration-pane";
 const crapsMainSection = "craps-main-section";
+const crapsStatsUsername = "craps-stats-username";
+const crapsStatsMoney = "craps-stats-money";
+const crapsStatsRounds = "craps-stats-rounds";
 
 function registerCrapsPlayer() {
-	let crapsUsername = document.getElementById("craps-username-input").value;
+	crapsUsername = document.getElementById("craps-username-input").value;
 
 	// Username validation check
-	let firstCharIsDigitRegex = /^[0-9]|[^a-zA-Z0-9_]/g
+	let firstCharIsDigitRegex = /^[0-9]|[^a-zA-Z0-9_]/g;
 	if (crapsUsername.length < 5 || firstCharIsDigitRegex.test(crapsUsername)) {
 		alert(
 			"Username must be at least 5 characters long, alphanumberic and underscore only, no spaces and cannot start with a number."
@@ -15,12 +25,27 @@ function registerCrapsPlayer() {
 	} else {
 		removeRegistrationPane();
 		showMainGameSection();
+		setupFirstRound();
 	}
 }
 
 function removeRegistrationPane() {
-	document.getElementById("craps-registration-pane").style.display = "none";
+	document.getElementById(crapsRegistrationPane).style.display = "none";
 }
 function showMainGameSection() {
-	document.getElementById("craps-main-section").style.display = "block";
+	document.getElementById(crapsMainSection).style.display = "block";
+}
+
+function setupFirstRound() {
+	document.getElementById(crapsStatsUsername).innerHTML = crapsUsername;
+	setMoney(startingMoney);
+	setRounds(startingRound);
+}
+
+function setMoney(money) {
+	document.getElementById(crapsStatsMoney).innerHTML = money;
+}
+
+function setRounds(rounds) {
+	document.getElementById(crapsStatsRounds).innerHTML = rounds;
 }
