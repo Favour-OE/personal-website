@@ -1,22 +1,27 @@
 :root {
 	--width-scale: min(700px, 80vw, 80vh);
 	--height-scale: calc(var(--width-scale) * 0.714);
-    --game-title-size: min(calc(var(--height-scale) * 0.1), 2em);
-    --title-margin-bottom: calc(var(--height-scale)* 0.25);
-    --title-margin-top: calc(calc(100vh - var(--game-title-size) - var(--title-margin-bottom) - var(--height-scale)) /2);
+	--game-title-size: min(calc(var(--height-scale) * 0.1), 2em);
+	--title-margin-bottom: calc(var(--height-scale) * 0.25);
+	--title-margin-top: calc(
+		calc(
+				100vh - var(--game-title-size) - var(--title-margin-bottom) -
+					var(--height-scale)
+			) / 2
+	);
 }
 #craps-game {
 	background-image: url(/images/vegas.jpg);
 	background-position: center;
 	color: var(--titleSectionTertiaryColor);
-    padding: 1px;
+	padding: 1px;
 }
 
 .craps-game-title {
-    font-size: var(--game-title-size);
+	font-size: var(--game-title-size);
 	text-align: center;
-    margin-top: var(--title-margin-top);
-    margin-bottom: var(--title-margin-bottom);
+	margin-top: var(--title-margin-top);
+	margin-bottom: var(--title-margin-bottom);
 }
 
 .craps-game-container {
@@ -30,7 +35,8 @@
 }
 
 #craps-registration-pane {
-	margin-top: 25px;
+	margin-top: calc(var(--height-scale) * 0.15);
+	font-size: calc(var(--game-title-size) * 0.5);
 	text-align: center;
 }
 
@@ -38,17 +44,14 @@
 	background: none;
 	border: none;
 	border-bottom: solid var(--titleSectionTertiaryColor) 1px;
-	margin-top: 25px;
+	margin: calc(var(--height-scale) * 0.055) 0;
 	color: var(--titleSectionTertiaryColor);
 	text-align: center;
+	font-size: calc(var(--game-title-size) * 0.5);
 }
 
 .craps-registration-input:focus {
 	outline-width: 0px;
-}
-
-.craps-registration-continue {
-	margin-top: 15px;
 }
 
 .craps-registration-continue:hover {
@@ -62,10 +65,11 @@
 
 .craps-main-section-stats {
 	text-align: center;
-	margin-top: 70px;
+	font-size: calc(var(--height-scale) * 0.04);
+	margin-top: calc(var(--height-scale) * 0.15);
 }
 
 #craps-stats-money-container {
-	font-size: 30px;
-	margin: 25px 0 5px 0;
+	font-size: calc(var(--height-scale) * 0.085);
+	margin-top: calc(var(--height-scale) * 0.04);
 }
