@@ -75,7 +75,8 @@ function betOdd() {
 }
 function chooseBet(bet) {
 	currentBet = bet;
-	document.getElementById(bet).style.backgroundColor = "red";
+	document.getElementById(bet).style.backgroundColor =
+		"var(--titleSectionPrimaryColor)";
 	const deselectBet = bet == bets.even ? bets.odd : bets.even;
 	document.getElementById(deselectBet).style.backgroundColor = "transparent";
 }
