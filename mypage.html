@@ -101,30 +101,56 @@
 						<div>Rounds: <span id="craps-stats-rounds"></span></div>
 					</div>
 					<div class="craps-on-table-container no-select">
-						<div class="craps-roll-dice-container" id="craps-roll-dice-button" onclick="rollDice()">ROLL DICE <i class="fas fa-dice"></i></div>
+						<div
+							class="craps-roll-dice-container"
+							id="craps-roll-dice-button"
+							onclick="rollDice()"
+						>
+							ROLL DICE <i class="fas fa-dice"></i>
+						</div>
 						<div id="craps-roll-dice-animation-container"></div>
 					</div>
 					<div class="craps-round-manager no-select">
-						<div class="craps-betting-grid">
-							<div
-								class="craps-bet-button"
-								id="EVEN"
-								onclick="betEven()"
-							>
-								EVEN
-							</div>
+						<div id="craps-betting-grid-container">
+							<div class="craps-betting-grid">
+								<div
+									class="craps-bet-button"
+									id="EVEN"
+									onclick="betEven()"
+								>
+									EVEN
+								</div>
 
-							<div class="craps-bet-amount-container">
-								<span class="craps-user-bet-amount-change" onclick="decreaseBet()">-</span>
-								<span id="craps-user-bet-amount">$100</span>
-								<span class="craps-user-bet-amount-change" onclick="increaseBet()">+</span>
+								<div class="craps-bet-amount-container">
+									<span
+										class="craps-user-bet-amount-change"
+										onclick="decreaseBet()"
+										>-</span
+									>
+									<span id="craps-user-bet-amount">$100</span>
+									<span
+										class="craps-user-bet-amount-change"
+										onclick="increaseBet()"
+										>+</span
+									>
+								</div>
+								<div
+									class="craps-bet-button"
+									id="ODD"
+									onclick="betOdd()"
+								>
+									ODD
+								</div>
 							</div>
-							<div
-								class="craps-bet-button"
-								id="ODD"
-								onclick="betOdd()"
-							>
-								ODD
+						</div>
+						<div id="craps-round-finish-grid-container">
+							<div class="craps-round-finish-grid">
+								<div class="craps-round-finish-button">NEXT ROUND</div>
+
+								<div  id="craps-round-finish-message">
+									YOU WIN!
+								</div>
+								<div class="craps-round-finish-button">EXIT GAME</div>
 							</div>
 						</div>
 					</div>
@@ -167,7 +193,10 @@
 	}
 </style>
 <script src="craps-game/crapsgame.js"></script>
-<script type="text/javascript" src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"></script>
+<script
+	type="text/javascript"
+	src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"
+></script>
 <script>
 	function makeDreamComeTrue() {
 		alert("Dream has come true");
