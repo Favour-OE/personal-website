@@ -140,4 +140,12 @@
 	margin: 0 calc(var(--height-scale) * 0.03);
 }
 
+#craps-next-round-button-disabled{
+	background-color: rgba(0, 0, 0, 0.5);
+	color: grey;
+}
+ 
+#craps-next-round-button-disabled:hover{
+	cursor: not-allowed;
+}
 

@@ -145,12 +145,28 @@
 						</div>
 						<div id="craps-round-finish-grid-container">
 							<div class="craps-round-finish-grid">
-								<div class="craps-round-finish-button" onclick="setupNextRound()">NEXT ROUND</div>
-
-								<div  id="craps-round-finish-message">
+								<div
+									class="craps-round-finish-button"
+									id="craps-next-round-button"
+									onclick="setupNextRound()"
+								>
+									NEXT ROUND
+								</div>
+								<div
+									class="craps-round-finish-button"
+									id="craps-next-round-button-disabled"
+								>
+									NEXT ROUND
+								</div>
+								<div id="craps-round-finish-message">
 									YOU WIN!
 								</div>
-								<div class="craps-round-finish-button" onclick="exitGame()">EXIT GAME</div>
+								<div
+									class="craps-round-finish-button"
+									onclick="exitGame()"
+								>
+									EXIT GAME
+								</div>
 							</div>
 						</div>
 					</div>
