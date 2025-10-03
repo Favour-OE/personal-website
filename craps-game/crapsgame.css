@@ -11,7 +11,7 @@
 	);
 }
 #craps-game {
-	background-image: url(../images/vegas.jpg);
+	background-image: url(/images/vegas.jpg);
 	background-position: center;
 	color: var(--titleSectionTertiaryColor);
 	padding: 1px;
@@ -29,7 +29,7 @@
 	height: var(--height-scale);
 	border: solid var(--titleSectionTertiaryColor) 2px;
 	margin: 0 auto;
-	background-image: url(../images/crapstable.png);
+	background-image: url(/images/crapstable.png);
 	background-size: cover;
 	background-position: center top;
 	position: relative;
