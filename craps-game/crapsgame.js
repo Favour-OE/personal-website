@@ -46,6 +46,9 @@ function registerCrapsPlayer() {
 		setupFirstRound();
 	}
 }
+function showRegistrationPane() {
+	document.getElementById(crapsRegistrationPane).style.display = "block";
+}
 
 function removeRegistrationPane() {
 	document.getElementById(crapsRegistrationPane).style.display = "none";
@@ -54,11 +57,19 @@ function showMainGameSection() {
 	document.getElementById(crapsMainSection).style.display = "block";
 }
 
+function hideMainGameSection() {
+	document.getElementById(crapsMainSection).style.display = "none";
+}
 function setupFirstRound() {
+	document.getElementById(crapsRollDiceAnimationContainer).style.display =
+		"none";
 	document.getElementById(crapsRoundFinishGridContainer).style.display =
 		"none";
+	document.getElementById(crapsRollDiceButton).style.display =
+			"block";
+	document.getElementById(crapsBettingGridContainer).style.display = "block";
 	document.getElementById(crapsStatsUsername).innerHTML = crapsUsername;
-
+	canChangeBet = true
 	setMoney(startingMoney);
 	setRounds(startingRound);
 	betEven();
@@ -109,6 +120,8 @@ function setBetAmount(betAmount) {
 function rollDice() {
 	canChangeBet = false;
 	formatDiceScale();
+	document.getElementById(crapsRollDiceAnimationContainer).style.display =
+		"block";
 	document.getElementById(crapsRollDiceButton).style.display = "none";
 	const diceRollElement = document.getElementById(
 		crapsRollDiceAnimationContainer
@@ -132,8 +145,10 @@ function formatDiceScale() {
 		"scale(" + scale + ")";
 }
 
-function delayedProcessDiceResult (diceResult){
-	setTimeout(function() {processDiceResult(diceResult); }, 1800)
+function delayedProcessDiceResult(diceResult) {
+	setTimeout(function () {
+		processDiceResult(diceResult);
+	}, 1800);
 }
 function processDiceResult(diceResult) {
 	const sum = diceResult.reduce((partialSum, a) => partialSum + a, 0);
@@ -143,19 +158,28 @@ function processDiceResult(diceResult) {
 	}
 	//ROUNDS incremental
 	setRounds(currentRounds + 1);
-	let roundFinishMessage = ""
+	let roundFinishMessage = "";
 	//Money Update
 	if (diceSumResult === currentBet) {
-		roundFinishMessage = "YOU WIN"
+		roundFinishMessage = "YOU WIN";
 		setMoney(currentMoney + currentBetAmount);
 	} else {
-		roundFinishMessage = "YOU LOSE"
+		roundFinishMessage = "YOU LOSE";
 		setMoney(currentMoney - currentBetAmount);
 	}
-	if (currentMoney ===0){
-		roundFinishMessage = "YOU'RE OUT!"
+	if (currentMoney === 0) {
+		roundFinishMessage = "YOU'RE OUT!";
 	}
-	document.getElementById(crapsBettingGridContainer).style.display = "none"
-	document.getElementById(crapsRoundFinishGridContainer).style.display = "block"
-	document.getElementById(crapsRoundFinishMessage).innerHTML = roundFinishMessage
+	document.getElementById(crapsBettingGridContainer).style.display = "none";
+	document.getElementById(crapsRoundFinishGridContainer).style.display =
+		"block";
+	document.getElementById(crapsRoundFinishMessage).innerHTML =
+		roundFinishMessage;
+}
+
+function exitGame() {
+	alert("After playing " + currentRounds + " rounds, you leave with $" + currentMoney + "!")
+	hideMainGameSection();
+	showRegistrationPane();
+	document.getElementById(crapsUsernameInput).value = "";
 }
