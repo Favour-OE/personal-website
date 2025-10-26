@@ -14,7 +14,7 @@
 		/>
 	</head>
 
-	<body>
+	<body onload = "getNewRandomQoute()">
 		<div class="main-section" id="title">
 			<h1 class="title-section-header">FAVOUR EMMANUEL</h1>
 			<p class="title-section-subtitle">
@@ -173,6 +173,19 @@
 				</div>
 			</div>
 		</div>
+		<div class="main-section" id="random-qoute-generator">
+			<div>
+				<div>
+					Qoute:
+					<div id="random-qoute-text"></div>
+				</div>
+				<div>
+					Author:
+					<div id="random-qoute-author"></div>
+				</div>
+				<div onclick="getNewRandomQoute()">Get Qoute</div>
+			</div>
+		</div>
 	</body>
 </html>
 
@@ -209,6 +222,7 @@
 	}
 </style>
 <script src="craps-game/crapsgame.js"></script>
+<script src="./randomQouteGenerator/randomQouteGenerator.js"></script>
 <script
 	type="text/javascript"
 	src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"
