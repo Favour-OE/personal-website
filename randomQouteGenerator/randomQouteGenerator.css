@@ -20,16 +20,13 @@
 	backdrop-filter: blur(12px);
 	border: 1px solid rgba(255, 255, 255, 0.45);
 	border-radius: 1vw;
-	padding: 15vh;
-	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
-
-	
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);	
 }
 
 #random-qoute-text {
 	font-size: 3vh;
 	width: 60vw;
-    margin-top: 4vh;
+    margin-top: 15vh;
 
 }
 
