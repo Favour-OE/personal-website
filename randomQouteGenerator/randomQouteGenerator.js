@@ -18,10 +18,9 @@ function getRandomColorCombo() {
 	return colors[randomIndex];
 }
 async function getNewRandomQoute() {
-	
 	const response = await fetch("http://api.quotable.io/random");
-	if (!response.ok){
-		alert('There was a problem getting a new qoute!')
+	if (!response.ok) {
+		alert("There was a problem getting a new qoute!");
 	}
 	const data = await response.json();
 
@@ -43,14 +42,9 @@ async function getNewRandomQoute() {
 
 	//button hover to adapt to color schema
 	newQuoteButton.addEventListener("mouseover", () => {
-
 		newQuoteButton.style.color = colorCombo[0];
-		newQuoteButton.style.border = "none";
 	});
 	newQuoteButton.addEventListener("mouseout", () => {
-	
 		newQuoteButton.style.color = "";
-		newQuoteButton.style.border = "";
 	});
-
 }
