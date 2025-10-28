@@ -1,0 +1,49 @@
+* {
+	margin: 0 auto;
+}
+#random-qoute-generator {
+	text-align: center;
+	color: var(--titleSectionTertiaryColor);
+}
+
+#random-qoute-title {
+	margin: 10vh 0vh 5vh 0;
+	font-size: 5vh;
+}
+
+#random-qoute-generator-container {
+	/* conatainer size */
+	width: 75vw;
+	height: 60vh;
+	/* transparent glassy feel */
+	background: rgba(255, 255, 255, 0.02);
+	backdrop-filter: blur(12px);
+	border: 1px solid rgba(255, 255, 255, 0.45);
+	border-radius: 1vw;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+#random-qoute-text {
+	font-size: 3vh;
+	width: 60vw;
+	margin-top: 15vh;
+}
+
+#random-qoute-author {
+	font-size: 2vh;
+	margin: 2vh 0 13vh;
+}
+
+#new-random-qoute {
+	font-size: 2vh;
+	width: 200px;
+	color: var(--titleSectionTertiaryColor);
+	border-color: var(--titleSectionTertiaryColor);
+}
+
+#new-random-qoute:hover {
+	background-color: var(--titleSectionTertiaryColor);
+	color: black;
+	font-weight: bolder;
+    border: none;
+}

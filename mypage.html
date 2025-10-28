@@ -2,19 +2,24 @@
 	<head>
 		<link rel="stylesheet" href="./titlesection/titlesection.css" />
 		<link rel="stylesheet" href="./aboutmesection/aboutmesection.css" />
+		<link rel="stylesheet" href="./craps-game/crapsgame.css" />
+		<link rel="stylesheet" href="./craps-game/utilities.css" />
+		<link
+			rel="stylesheet"
+			href="./randomQouteGenerator/randomQouteGenerator.css "
+		/>
 		<link
 			href="https://fonts.googleapis.com/css2?family=Merriweather"
 			rel="stylesheet"
 		/>
-		<link rel="stylesheet" href="./craps-game/crapsgame.css" />
-		<link rel="stylesheet" href="./craps-game/utilities.css" />
+
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
 		/>
 	</head>
 
-	<body>
+	<body onload="getNewRandomQoute()">
 		<div class="main-section" id="title">
 			<h1 class="title-section-header">FAVOUR EMMANUEL</h1>
 			<p class="title-section-subtitle">
@@ -173,6 +178,21 @@
 				</div>
 			</div>
 		</div>
+		<div class="main-section" id="random-qoute-generator">
+			<div id="random-qoute-title">RANDOM QOUTE GENERATOR</div>
+			<div id="random-qoute-generator-container">
+				<div id="random-qoute-text"></div>
+				<div id="random-qoute-author"></div>
+
+				<div
+					class="title-section-botton"
+					id="new-random-qoute"
+					onclick="getNewRandomQoute()"
+				>
+					Get Qoute
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
 
@@ -209,6 +229,7 @@
 	}
 </style>
 <script src="craps-game/crapsgame.js"></script>
+<script src="./randomQouteGenerator/randomQouteGenerator.js"></script>
 <script
 	type="text/javascript"
 	src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"
