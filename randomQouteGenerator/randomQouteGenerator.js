@@ -18,7 +18,7 @@ function getRandomColorCombo() {
 	return colors[randomIndex];
 }
 async function getNewRandomQoute() {
-	const response = await fetch("http://api.quotable.io/random");
+	const response = await fetch("https://api.quotable.io/random");
 	if (!response.ok) {
 		alert("There was a problem getting a new qoute!");
 	}
