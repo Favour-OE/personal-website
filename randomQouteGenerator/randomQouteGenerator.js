@@ -18,17 +18,6 @@ function getRandomColorCombo() {
 	return colors[randomIndex];
 }
 async function getNewRandomQoute() {
-const response = await fetch("https://api.quotable.io/random");
-	if (!response.ok) {
-		alert("There was a problem getting a new qoute!");
-	}
-	const data = await response.json();
-
-	const qouteText = data.content;
-	const qouteAuthor = data.author;
-	document.getElementById("random-qoute-text").innerHTML = qouteText;
-	document.getElementById("random-qoute-author").innerHTML = qouteAuthor;
-
 	const colorCombo = getRandomColorCombo();
 	const angle = Math.floor(Math.random() * (180 - 45 + 1)) + 45;
 	randomQouteGenerator.style.background =
@@ -40,11 +29,21 @@ const response = await fetch("https://api.quotable.io/random");
 		colorCombo[1] +
 		")";
 
-	//button hover to adapt to color schema
+	// button hover to adapt to color schema
 	newQuoteButton.addEventListener("mouseover", () => {
 		newQuoteButton.style.color = colorCombo[0];
 	});
 	newQuoteButton.addEventListener("mouseout", () => {
 		newQuoteButton.style.color = "";
 	});
+	const response = await fetch("https://api.quotable.io/random");
+	if (!response.ok) {
+		alert("There was a problem getting a new qoute!");
+	}
+	const data = await response.json();
+
+	const qouteText = data.content;
+	const qouteAuthor = data.author;
+	document.getElementById("random-qoute-text").innerHTML = qouteText;
+	document.getElementById("random-qoute-author").innerHTML = qouteAuthor;
 }
