@@ -20,16 +20,8 @@ function getRandomColorCombo() {
 async function getNewRandomQoute() {
 	const colorCombo = getRandomColorCombo();
 	const angle = Math.floor(Math.random() * (180 - 45 + 1)) + 45;
-	randomQouteGenerator.style.background =
-		"linear-gradient(" +
-		angle +
-		"deg," +
-		colorCombo[0] +
-		"," +
-		colorCombo[1] +
-		")";
+	randomQouteGenerator.style.background = `linear-gradient(${angle}deg, ${colorCombo[0]}, ${colorCombo[1]})`;
 
-	// button hover to adapt to color schema
 	newQuoteButton.addEventListener("mouseover", () => {
 		newQuoteButton.style.color = colorCombo[0];
 	});
@@ -39,15 +31,14 @@ async function getNewRandomQoute() {
 
 	const response = await fetch("https://zenquotes.io/api/random");
 	console.log(response)
-	if (!response.ok) {
-		throw new Error("Failed to fetch quote");
-	}
+
+	if (!response.ok) throw new Error("Failed to fetch quote");
 
 	const data = await response.json();
-	console.log(data);
-	const qouteText = data[0].q;
-	const qouteAuthor = data[0].a;
+	const quoteData = JSON.parse(data.contents)[0]; 
+
+	const qouteText = quoteData.q;
+	const qouteAuthor = quoteData.a;
 
 	document.getElementById("random-qoute-text").innerHTML = qouteText;
-	document.getElementById("random-qoute-author").innerHTML = qouteAuthor;
 }
