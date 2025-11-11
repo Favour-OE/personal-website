@@ -36,14 +36,18 @@ async function getNewRandomQoute() {
 	newQuoteButton.addEventListener("mouseout", () => {
 		newQuoteButton.style.color = "";
 	});
-	const response = await fetch("https://api.quotable.io/random");
-	if (!response.ok) {
-		alert("There was a problem getting a new qoute!");
-	}
-	const data = await response.json();
 
-	const qouteText = data.content;
-	const qouteAuthor = data.author;
+	const response = await fetch("https://zenquotes.io/api/random");
+	console.log(response)
+	if (!response.ok) {
+		throw new Error("Failed to fetch quote");
+	}
+
+	const data = await response.json();
+	console.log(data);
+	const qouteText = data[0].q;
+	const qouteAuthor = data[0].a;
+
 	document.getElementById("random-qoute-text").innerHTML = qouteText;
 	document.getElementById("random-qoute-author").innerHTML = qouteAuthor;
 }
