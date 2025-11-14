@@ -133,15 +133,9 @@
     </div>
   </div>
   <div class="main-section" id="stock-analysis-dashboard">
-    <div id="stock-analysis-dashboard-title">STOCK ANALYSIS DASHBOARD</div>
-    <div id="stock-analysis-dashboard-subtitle">Put in a stock Symbol you'd like to analyze (eg. MSFT)</div>
-    <input type="text" id="stock-analysis-dashboard-input">
-    <button class="stock-analysis-dashboard-button" onclick="analyzeStocks()">
-      Analyze
-    </button>
-    <div id="stock-analysis-dashboard-data"></div>
+    <div id="root"></div>
   </div>
-  </div>
+ 
 </body>
 
 </html>
@@ -185,6 +179,7 @@
 <script src="./src/stockAnalysisDashboard/stockAnalysisDashboard.js"></script>
 <script src="./src/randomQouteGenerator/randomQouteGenerator.js"></script>
 <script type="text/javascript" src="https://unpkg.com/roll-a-die@2.0.1/dist/roll-a-die.js"></script>
+<script type="module" src="/src/main.tsx"></script>
 <script>
   function makeDreamComeTrue() {
     alert("Dream has come true");
@@ -193,6 +188,3 @@
     document.getElementById("title").style.visibility = "Hidden";
   }
 </script>
-
-<!-- <div id="root"></div>
-<script type="module" src="/src/main.tsx"></script> -->
