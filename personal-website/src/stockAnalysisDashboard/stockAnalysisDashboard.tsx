@@ -1,13 +1,38 @@
 import { useState } from "react";
 import { analyzeStock } from "./stockAnalysisDashboard";
+import { Oval } from "react-loader-spinner";
 
 function StockAnalysisDashboard() {
 	const [stockData, setStockData] = useState<string>("");
 	const [stockSymbol, setStockSymbol] = useState<string>("");
+	const [isLoading, setIsLoading] = useState(false);
+	const [gotData, setGotData] = useState(false);
+    
+    function goBack(){
+        setGotData(false);
+		setIsLoading(false);
+    }
 
 	async function runStockAnalysis() {
+		setIsLoading(true);
 		const gotStockData = await analyzeStock(stockSymbol);
-		setStockData(gotStockData);
+		if (gotStockData) {
+			setStockData(gotStockData);
+			setGotData(true);
+			setIsLoading(false);
+		}else{
+            goBack()
+        }
+	}
+
+	if (gotData) {
+		return (
+			<div>
+				<div onClick={() => setGotData(false)}>BACK</div>
+
+				<div>{JSON.stringify(stockData)}</div>
+			</div>
+		);
 	}
 
 	return (
@@ -16,25 +41,43 @@ function StockAnalysisDashboard() {
 				<div id="stock-analysis-dashboard-title">
 					STOCK ANALYSIS DASHBOARD
 				</div>
-				<div id="stock-analysis-dashboard-subtitle">
-					Put in a stock Symbol you'd like to analyze (eg. MSFT)
-				</div>
-				<input
-					type="text"
-					placeholder="Enter stock symbol"
-					value={stockSymbol}
-					onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-						setStockSymbol(e.target.value)
-					}
-				/>
+				{isLoading ? (
+					<div>
+						<Oval
+							height={40}
+							width={40}
+							color="#4fa94d"
+							secondaryColor="#4fa94d"
+							strokeWidth={5}
+							strokeWidthSecondary={5}
+							visible={true}
+							ariaLabel="oval-loading"
+						/>
+					</div>
+				) : (
+					<div>
+						<div id="stock-analysis-dashboard-subtitle">
+							Put in a stock Symbol you'd like to analyze (eg.
+							MSFT)
+						</div>
 
-				<button
-					className="stock-analysis-dashboard-button"
-					onClick={() => runStockAnalysis()}
-				>
-					Analyze
-				</button>
-				<div>{JSON.stringify(stockData)}</div>
+						<input
+							type="text"
+							placeholder="Enter stock symbol"
+							value={stockSymbol}
+							onChange={(
+								e: React.ChangeEvent<HTMLInputElement>
+							) => setStockSymbol(e.target.value)}
+						/>
+
+						<button
+							className="stock-analysis-dashboard-button"
+							onClick={() => runStockAnalysis()}
+						>
+							Analyze
+						</button>
+					</div>
+				)}
 			</div>
 		</>
 	);
