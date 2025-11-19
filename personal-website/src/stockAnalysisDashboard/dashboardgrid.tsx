@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import "gridstack/dist/gridstack.min.css";
 import { GridStack } from "gridstack";
 import { DashboardGridContent } from "./stockAnalysisDashboard";
-
+import { NumberStat } from "./numberStat";
 function DashboardGrid({ stockData }: { stockData: any }) {
 	useEffect(() => {
 		GridStack.init();
@@ -14,26 +14,41 @@ function DashboardGrid({ stockData }: { stockData: any }) {
 				{/* First Row */}
 				<div className="grid-stack-item" gs-w="3">
 					<DashboardGridContent className="grid-stack-item-content">
-						<div>{stockData.basicInfo.marketCap}</div>
-						<div>MARKET CAP </div>
+						<NumberStat
+							value={stockData.basicInfo.marketCap}
+							label="Market Cap"
+							center={true}
+						/>
 					</DashboardGridContent>
 				</div>
+
 				<div className="grid-stack-item" gs-w="3">
 					<DashboardGridContent className="grid-stack-item-content">
-						<div>{stockData.basicInfo.fullTimeEmployees}</div>
-						<div>EMPLOYEES</div>
+						<NumberStat
+							value={stockData.basicInfo.fullTimeEmployees}
+							label="Employees"
+							center={true}
+						/>
 					</DashboardGridContent>
 				</div>
+
 				<div className="grid-stack-item" gs-w="3">
 					<DashboardGridContent className="grid-stack-item-content">
-						<div>{stockData.basicInfo.totalRevenue}</div>
-						<div>TOTAL REVENUE </div>
+						<NumberStat
+							value={stockData.basicInfo.totalRevenue}
+							label="Total Revenue"
+							center={true}
+						/>
 					</DashboardGridContent>
 				</div>
+
 				<div className="grid-stack-item" gs-w="3">
 					<DashboardGridContent className="grid-stack-item-content">
-						<div>{stockData.basicInfo.trailingEps}</div>
-						<div>EARNINGS PER SHARE </div>
+						<NumberStat
+							value={stockData.basicInfo.trailingEps}
+							label="Earnings Per Share"
+							center={true}
+						/>
 					</DashboardGridContent>
 				</div>
 			</div>
