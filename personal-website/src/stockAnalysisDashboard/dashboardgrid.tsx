@@ -6,7 +6,6 @@ import { DashboardGridContent } from "./stockAnalysisDashboard";
 import NumberStat from "./numberStat";
 import LineChartContent from "./lineChartContent";
 
-
 function DashboardGrid({ stockData }: { stockData: any }) {
 	useEffect(() => {
 		GridStack.init();
@@ -58,6 +57,19 @@ function DashboardGrid({ stockData }: { stockData: any }) {
 						<LineChartContent
 							priceHistory={stockData.priceHistory}
 						></LineChartContent>
+					</DashboardGridContent>
+				</div>
+
+				<div className="grid-stack-item" gs-w="2" gs-h="2">
+					<DashboardGridContent className="grid-stack-item-content">
+						<div style={{ marginBottom: "10px" }}>
+							Future Earnings
+						</div>
+						{stockData.futureEarningsDates.map(
+							(nextDate: string) => (
+								<div>{nextDate}</div>
+							)
+						)}
 					</DashboardGridContent>
 				</div>
 			</div>
