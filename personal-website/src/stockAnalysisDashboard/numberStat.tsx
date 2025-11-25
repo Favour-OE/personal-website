@@ -4,7 +4,7 @@ import {
 	PrimaryColor,
 } from "./stockAnalysisDashboard";
 import styled from "styled-components";
-import numabbr from 'numabbr'
+import numabbr from "numabbr";
 
 const NumberDisplay = styled.div`
 	color: ${PrimaryColor};
@@ -13,12 +13,22 @@ const NumberDisplay = styled.div`
 
 const LabelDisplay = styled.div`
 	font-weight: bold;
-	font-size: 15px;
+	font-size: 12px;
 `;
 
-export function NumberStat({ value, label, center}: { value: number; label: string, center?: boolean }) {
+function NumberStat({
+	value,
+	label,
+	center,
+}: {
+	value: number;
+	label: string;
+	center?: boolean;
+}) {
 	return (
-		<VerticalAlignContainer style={{textAlign: center ? "center": 'left' }}>
+		<VerticalAlignContainer
+			style={{ textAlign: center ? "center" : "left" }}
+		>
 			<VerticalAlignContent>
 				<NumberDisplay>{numabbr(value)}</NumberDisplay>
 				<LabelDisplay>{label}</LabelDisplay>
