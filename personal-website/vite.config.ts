@@ -21,7 +21,7 @@ export default defineConfig({
 					dest: "./src/randomQouteGenerator/",
 				},
 				{
-					src: ".src/aboutmesection/FAVOUR_OJOCHENEMI_EMMANUEL_CV (1).pdf",
+					src: "./src/aboutmesection/FAVOUR_OJOCHENEMI_EMMANUEL_CV (1).pdf",
 					dest: "./src/aboutmesection/",
 				},
 			],
