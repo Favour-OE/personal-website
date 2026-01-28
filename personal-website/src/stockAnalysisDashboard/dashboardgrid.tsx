@@ -69,7 +69,7 @@ function DashboardGrid({ stockData }: { stockData: any }) {
 							Future Earnings
 						</div>
 
-						{stockData.futureEarningsDates?.map(
+						{stockData.futureEarningDates?.map(
 							(nextDate: string) => (
 								<div key={nextDate}>{nextDate}</div>
 							)
