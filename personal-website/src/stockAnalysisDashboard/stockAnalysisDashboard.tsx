@@ -18,6 +18,7 @@ import "./stockAnalysisDashboard.css";
 import DashboardGrid from "./dashboardgrid";
 
 function StockAnalysisDashboard() {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	const [stockData, setStockData] = useState<any>();
 	const [stockSymbol, setStockSymbol] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
