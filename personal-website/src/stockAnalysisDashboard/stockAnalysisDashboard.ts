@@ -5,7 +5,15 @@ export async function analyzeStock(stockSymbolToAnalyze: string) {
 		alert("You must put in a ticker symbol before analysis");
 		return;
 	}
-	const url = "http://127.0.0.1:5000/analyze-stock/" + stockSymbolToAnalyze;
+	// Local host
+	// const url = "http://127.0.0.1:5000/analyze-stock/" + stockSymbolToAnalyze;
+
+	//subnet
+	// const url = "http://172.20.31.187:5000/analyze-stock/" + stockSymbolToAnalyze;
+
+	// Production
+	const url = "https://text-analysis-tool.onrender.com/analyze-stock/" +
+		stockSymbolToAnalyze;
 
 	const response = await fetch(url);
 	if (!response.ok) {
